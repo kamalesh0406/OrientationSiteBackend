@@ -1,4 +1,4 @@
-# Orientation Backend
+# Orientation Backend [![Build Status](https://travis-ci.com/kamalesh0406/OrientationSiteBackend.svg?token=yCggWKCYWYGdQtzyQXGg&branch=master)](https://travis-ci.com/kamalesh0406/OrientationSiteBackend)
 
 Steps to run this project:
 
