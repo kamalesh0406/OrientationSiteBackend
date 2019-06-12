@@ -6,4 +6,4 @@ cache:
   directories:
   - node_modules
 script:
-  - npm prod || exit 1
+  - npm run tsc || exit 1
