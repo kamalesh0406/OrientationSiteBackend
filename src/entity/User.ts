@@ -1,18 +1,32 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
-
+import {Entity, PrimaryColumn, Column} from "typeorm";
+export enum Department{
+    ARCHI = "archi",
+    CHEM = "chem",
+    ECE = "ece",
+    EEE = "eee",
+    ICE = "ice",
+    PROD = "prod",
+    MECH = "mech"
+}
 @Entity()
 export class User {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryColumn("int")
+    roll_number:number;
 
-    @Column()
-    firstName: string;
+    @Column("varchar", { length:255})
+    name: string;
 
-    @Column()
-    lastName: string;
+    @Column("varchar", {length:255})
+    password: string;
 
-    @Column()
-    age: number;
+    @Column({
+        type:"enum",
+        enum: Department
+    })
+    department: Department;
+
+    @Column("binary")
+    isAdmin: boolean;
 
 }

@@ -3,7 +3,6 @@
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "devDependencies": {
-      "ts-node": "3.3.0",
       "@types/node": "^8.0.29",
       "typescript": "3.3.3333"
    },
@@ -29,7 +28,7 @@
    "scripts": {
       "tsc": "tsc",
       "start": "set debug=* && ts-node-dev --respawn --transpileOnly ./src/index.ts",
-      "prod": "tsc && node ./build/app.js",
-      "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run"
+      "prod": "tsc && node ./build/index.js",
+      "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run"
    }
 }
