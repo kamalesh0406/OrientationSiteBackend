@@ -6,4 +6,7 @@ Steps to run this project:
 2. Setup database settings inside `ormconfig.json` file
 3. Run `npm start` command
 
-### Contributors
+### Contributors 
+
+Add your name to this list when you make your first commit:  
+* Kamalesh Palanisamy
