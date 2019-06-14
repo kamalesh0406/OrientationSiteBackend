@@ -4,6 +4,7 @@
    "description": "Awesome project developed with TypeORM.",
    "devDependencies": {
       "@types/node": "^8.0.29",
+      "tsconfig-paths": "^3.8.0",
       "typescript": "3.3.3333"
    },
    "dependencies": {
@@ -29,6 +30,6 @@
       "tsc": "tsc",
       "start": "set debug=* && ts-node-dev --respawn --transpileOnly ./src/index.ts",
       "prod": "tsc && node ./build/index.js",
-      "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run"
+      "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
    }
 }
