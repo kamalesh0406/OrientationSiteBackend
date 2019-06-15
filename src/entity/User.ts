@@ -1,4 +1,6 @@
 import {Entity, PrimaryColumn, Column} from "typeorm";
+import config from "../config/config";
+import * as bcrypt from "bcryptjs";
 
 export enum Department{
     ARCHI = "archi",
@@ -40,7 +42,7 @@ export class User {
         enum:BloodGroup
     })
     blood_group:BloodGroup;
-    
+
     @Column("varchar", {length:20})
     phone_number:string;
 
@@ -56,4 +58,13 @@ export class User {
     @Column("binary")
     is_admin: boolean;
 
+    hashPassword(){
+        this.password = bcrypt.hashSync(this.password, config.hashSalt);
+        return;
+    }
+
+    checkIfUnecryptedPasswordisValid(unencryptedPassword: string){
+        return bcrypt.compareSync(unencryptedPassword, this.password);
+
+    }
 }
