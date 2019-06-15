@@ -18,7 +18,7 @@ export class User {
     @PrimaryColumn("int")
     roll_number:number;
 
-    @Column("varchar", { length:255})
+    @Column("varchar", {length:255})
     name: string;
 
     @Column("varchar", {length:255})
