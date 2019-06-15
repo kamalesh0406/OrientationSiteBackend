@@ -1,13 +1,15 @@
 import {getRepository} from "typeorm";
 import {NextFunction, Request, Response} from "express";
 import {User} from "../entity/User";
+import * as jwt from "jsonwebtoken";
+import config from "../config/config";
 
 class UserController {
 
    static register = async (req: Request, res: Response) => {
-        let {username, name, dob, blood_group, phone_number, department} = req.body;
-        console.log(username, name);
-        if(!(username && name && dob && blood_group && phone_number && department)){
+        let {roll_number, name, dob, blood_group, phone_number, department} = req.body;
+        console.log(roll_number, name);
+        if(!(roll_number && name && dob && blood_group && phone_number && department)){
             res.status(400).send();
         }
 
@@ -15,7 +17,7 @@ class UserController {
 
         let user = new User();
 
-        user.roll_number = +username;
+        user.roll_number = +roll_number;
         user.name = name;
         user.DOB = new Date(dob);
         user.blood_group = blood_group;
@@ -37,6 +39,35 @@ class UserController {
             console.log(error);
             res.status(400).send("Check Your Values");
         }
+   };
+   static login = async (req: Request, res: Response) => {
+        let { roll_number, password} = req.body;
+        if(!(roll_number && password)){
+            res.status(400).send();
+        }
+
+        const UserRepository = getRepository(User);
+        let user:User;
+        try{
+            user = await UserRepository.findOneOrFail({where:{ roll_number }});
+            console.log(user)
+        }catch(error){
+            res.status(400).send("User does not exist");
+        }
+
+        if(!user.checkIfUnecryptedPasswordisValid(password)){
+            res.status(401).send("Wrong Password!");
+        }
+
+        delete user.password;
+        
+        const token = jwt.sign(
+            {user},
+            config.jwtSecret,
+            {expiresIn: config.expiryTime}
+        )
+
+        res.status(200).json({"JWT":token});
    };
 }
 

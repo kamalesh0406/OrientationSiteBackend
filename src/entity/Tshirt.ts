@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne, Unique} from "typeorm";
 import {User} from "./User";
 
 export enum Size{
@@ -9,6 +9,7 @@ export enum Size{
 }
 
 @Entity()
+@Unique(["name"])
 export class Tshirt{
 
     @PrimaryGeneratedColumn()

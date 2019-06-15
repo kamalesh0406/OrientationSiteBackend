@@ -55,7 +55,7 @@ export class User {
     @Column("varchar", {length:255})
     password:string;
 
-    @Column("binary")
+    @Column("boolean")
     is_admin: boolean;
 
     hashPassword(){
