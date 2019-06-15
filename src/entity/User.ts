@@ -12,6 +12,17 @@ export enum Department{
     META = "meta"
 }
 
+export enum BloodGroup{
+    Opos = "O+",
+    Oneg = "O-",
+    Apos = "A+",
+    Aneg = "A-",
+    Bpos = "B+",
+    Bneg = "B-",
+    ABpos = "AB+",
+    ABneg = "AB-" 
+}
+
 @Entity()
 export class User {
 
@@ -19,10 +30,19 @@ export class User {
     roll_number:number;
 
     @Column("varchar", {length:255})
-    name: string;
+    name:string;
 
-    @Column("varchar", {length:255})
-    password: string;
+    @Column("date")
+    DOB:Date;
+
+    @Column({
+        type:"enum",
+        enum:BloodGroup
+    })
+    blood_group:BloodGroup;
+    
+    @Column("varchar", {length:20})
+    phone_number:string;
 
     @Column({
         type:"enum",
@@ -30,7 +50,10 @@ export class User {
     })
     department: Department;
 
+    @Column("varchar", {length:255})
+    password:string;
+
     @Column("binary")
-    isAdmin: boolean;
+    is_admin: boolean;
 
 }
