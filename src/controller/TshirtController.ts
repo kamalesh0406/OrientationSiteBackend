@@ -7,6 +7,10 @@ class TshirtController{
     static register = async (req:Request, res:Response) =>{
         let { size } = req.body;
 
+        if(!(size)){
+            res.status(400).send("Size not received");
+        }
+
         const UserRepository = getRepository(User);
         let user: User;
         try{

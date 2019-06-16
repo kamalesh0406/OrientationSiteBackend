@@ -4,6 +4,10 @@ import config from "../config/config";
 
 export const checkJwt = (req:Request, res: Response, next:NextFunction) => {
 
+    if (!(req.headers["authorization"])){
+        res.status(401).send("Unauthorized");
+    }
+    
     const token = <string>req.headers["authorization"].split(' ')[1];
     let jwtPayload;
 
