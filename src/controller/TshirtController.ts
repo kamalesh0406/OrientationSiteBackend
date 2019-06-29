@@ -14,13 +14,11 @@ class TshirtController{
         const UserRepository = getRepository(User);
         let user: User;
         try{
-            user = await UserRepository.findOneOrFail({where: res.locals.jwtPayload })
-
+            user = await UserRepository.findOneOrFail({roll_number: res.locals.jwtPayload.user.roll_number })
         }catch(error){
             console.log(error);
             res.status(400).send();
         }
-
         let tshirt = new Tshirt()
         tshirt.name = user;
         tshirt.size = size;
@@ -34,12 +32,22 @@ class TshirtController{
         res.status(200).send("Registered");
     };
     static details = async (req:Request, res:Response) =>{
-        
+        const UserRepository = getRepository(User);
+        let user: User;
+        try{
+            user = await UserRepository.findOneOrFail({roll_number: res.locals.jwtPayload.user.roll_number })
+        }catch(error){
+            console.log(error);
+            res.status(400).send();
+        }
+        console.log(user);
         const tshirtRepository = getRepository(Tshirt);
         let tshirt:Tshirt;
         try{
-            tshirt = await tshirtRepository.findOneOrFail({where: res.locals.jwtPayload})
+            console.log(res.locals.jwtPayload);
+            tshirt = await tshirtRepository.findOneOrFail({name: user})
         }catch(error){
+            console.log(error);
             res.status(400).send("Tshirt not registered");
         }
 
