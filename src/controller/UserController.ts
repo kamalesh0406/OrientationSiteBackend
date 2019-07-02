@@ -29,7 +29,7 @@ class UserController {
         console.log(user.password);
         user.hashPassword()
 
-        const UserRepository = getConnection().getRepository(User);
+        const UserRepository = getRepository(User);
         console.log("Here");
 
         try{
@@ -46,7 +46,7 @@ class UserController {
             res.status(400).send();
         }
 
-        const UserRepository = getConnection().getRepository(User);
+        const UserRepository = getRepository(User);
         let user:User;
         try{
             user = await UserRepository.findOneOrFail({where:{ roll_number }});
