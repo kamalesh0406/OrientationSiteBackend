@@ -6,8 +6,20 @@ import * as cors from "cors";
 import * as helmet from "helmet";
 import routes from "./routes";
 import {User} from "./entity/User";
+import {Books} from "./entity/Books";
+import {Tshirt} from "./entity/Tshirt";
+import {Events} from "./entity/Events";
 
-createConnection().then(async connection => {
+createConnection({
+    type: "mysql",
+    host: "localhost",
+    port: 3306,
+    username: "test",
+    password: "test",
+    database: "test",
+entities: [User, Books, Tshirt, Events],
+synchronize:false
+}).then(async connection => {
 
     // create express app
     const app = express();

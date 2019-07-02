@@ -1,4 +1,4 @@
-import {getRepository} from "typeorm";
+import {getRepository, getConnection} from "typeorm";
 import {NextFunction, Request, Response} from "express";
 import {User} from "../entity/User";
 import * as jwt from "jsonwebtoken";
@@ -29,7 +29,7 @@ class UserController {
         console.log(user.password);
         user.hashPassword()
 
-        const UserRepository = getRepository(User);
+        const UserRepository = getConnection().getRepository(User);
         console.log("Here");
 
         try{
@@ -46,7 +46,7 @@ class UserController {
             res.status(400).send();
         }
 
-        const UserRepository = getRepository(User);
+        const UserRepository = getConnection().getRepository(User);
         let user:User;
         try{
             user = await UserRepository.findOneOrFail({where:{ roll_number }});
