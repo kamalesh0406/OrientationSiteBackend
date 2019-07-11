@@ -5,22 +5,25 @@ import { Events } from "../entity/Events";
 class EventsController{
     static register = async (req:Request, res:Response) => {
 
-        let {name, description, time, department} = req.body;
+        let {title, start, end, bgColor, allDay, department} = req.body;
         console.log(res.locals.jwtPayload.user.is_admin);
 
         if (!(res.locals.jwtPayload.user.is_admin)){
             res.status(400).send("User Does Not Have Permissions");
         }
 
-        if (!(name && description && time && department)){
+        if (!(title && start && end && bgColor && allDay && department)){
             res.status(400).send("Not all values received");
         }
 
         let eventRepository = getRepository(Events);
         let event = new Events()
-        event.name = name;
-        event.description = description;
-        event.date = new Date(time);
+        event.title = title;
+        event.start = new Date(start);
+        event.end = new Date(end);
+        event.allDay = allDay;
+        event.department = department;
+        event.bgColor = bgColor;
 
         try{
             await eventRepository.save(event);

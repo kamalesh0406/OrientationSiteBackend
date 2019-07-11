@@ -19,15 +19,21 @@ export class Events{
     @PrimaryGeneratedColumn()
     event_id:number;
 
-    @Column("varchar")
-    name:string;
-
     @Column("longtext")
-    description:string;
+    title:string;
+
+    @Column("boolean")
+    allDay:boolean;
 
     @Column("datetime")
-    date:Date;
+    start:Date;
 
+    @Column("datetime")
+    end:Date;
+
+    @Column("varchar")
+    bgColor:string;
+    
     @Column({
         type:"enum",
         enum:Department

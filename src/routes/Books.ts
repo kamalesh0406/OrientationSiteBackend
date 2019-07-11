@@ -5,6 +5,6 @@ import { checkJwt } from "../middlewares/checkJWT";
 let routes = Router()
 
 routes.post("/add", [checkJwt],  BooksController.add);
-routes.get("/details", BooksController.details);
+routes.post("/details", BooksController.details);
 
 export default routes;

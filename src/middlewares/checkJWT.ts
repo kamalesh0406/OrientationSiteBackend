@@ -16,7 +16,7 @@ export const checkJwt = (req:Request, res: Response, next:NextFunction) => {
         res.locals.jwtPayload = jwtPayload;
         console.log(jwtPayload);
     }catch(error){
-        res.status(401).send("Unauthorized");
+        res.status(403).send("Incorrect JWT");
     }
 
     next();
