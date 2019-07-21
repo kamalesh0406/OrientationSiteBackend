@@ -1,5 +1,5 @@
 {
-	"lib":["es5", "es6"],
+  "lib": ["es2015", "es5", "es6"],
   "compileOnSave": true,
   "compilerOptions": {
     "module": "commonjs",
@@ -13,19 +13,10 @@
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "strictPropertyInitialization": false,
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": [
-    "./src/**/*.ts"
-  ],
-  "exclude": [
-    "./src/**/*.test.ts",
-    "./src/public/"
-  ]
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./src/**/*.test.ts", "./src/public/"]
 }
-
