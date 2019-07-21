@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap");
+/* Form */
+.form {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  max-width: 500px;
+  margin: 0 auto 100px;
+  padding: 30px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  text-align: center;
+  border: solid 1px #fff;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.55);
+}
+
+.form img {
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  height: 150px;
+  width: 150px;
+}
+.form select {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  outline: 0;
+  background: #ef3b3a;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.message {
+  margin: 15px 0 0;
+  color: #000000;
+  font-size: 50px;
+  padding: 20px;
+  font-family: "Bungee Shade", cursive;
+}
+.form .message a {
+  color: #ef3b3a;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+
+.container {
+  position: relative;
+  top: 20vh;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+
+  .container {
+    position: relative;
+    top: 20vh;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+  .message {
+    margin: 15px 0 0;
+    color: #000000;
+    font-size: 45px;
+    padding: 10px;
+    font-family: "Bungee Shade", cursive;
+  }
+  .form img {
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    height: 100px;
+    width: 100px;
+  }
+}
+.container:before,
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}

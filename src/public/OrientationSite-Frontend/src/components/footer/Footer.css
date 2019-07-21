@@ -1,0 +1,41 @@
+@media screen and (min-width: 600px) {
+  footer {
+    height: 4vh;
+    background-color: #2d2a3b;
+    vertical-align: center;
+    width: 100%;
+    position: fixed;
+    display: table;
+    bottom: 0;
+    z-index: 21;
+  }
+  @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
+  #description {
+    text-align: center;
+    color: white;
+    font-family: "Source Code Pro", monospace;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    height: 20px;
+    background-color: #2d2a3b;
+    vertical-align: center;
+    width: 100%;
+    position: fixed;
+    display: table;
+    bottom: 0;
+    z-index: 21;
+  }
+  @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
+  #description {
+    text-align: center;
+    color: white;
+    font-family: "Source Code Pro", monospace;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,20 @@
+.header {
+    text-align: center;
+    padding: 50px;
+    font-family: "Bungee Shade", Arial, sans-serif;
+    font-size: 80px;
+    color: white;
+    max-width: 100vw;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    .header {
+        text-align: center;
+        font-family: "Bungee Shade", Arial, sans-serif;
+        font-size: 11vw;
+        color: white;
+        margin: auto;
+        max-width: 100vw;
+      }
+  }

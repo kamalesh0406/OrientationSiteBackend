@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Monoton|Permanent+Marker&display=swap");
+.navbar-brand {
+  font-family: "Monoton", serif;
+  font-size: 45px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Acme&display=swap");
+.nav-link {
+  font-family: "Acme", serif;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 800px) {
+  nav {
+    background-color: rgb(46, 45, 61, 0.8);
+    height: 8vh;
+  }
+} 
+
+
+.logo-row {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 100%;
+  text-align: center;
+}
+
+.navbar {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+@media screen and (max-width: 800px) {
+  .logo-row {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  nav {
+    background-color: rgb(46, 45, 61, 0.9);
+  }
+  .navbar-brand {
+    font-family: "Monoton", serif;
+    font-size: 30px;
+  }
+  .nav-link {
+    font-family: "Acme", serif;
+    font-size: 17px;
+    padding: 15px;
+  }
+  .nav-item {
+    text-align: center;
+  }
+}

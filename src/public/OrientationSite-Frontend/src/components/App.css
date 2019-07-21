@@ -1,0 +1,37 @@
+html,
+body {
+  /* min-height: 100vh;
+  min-width: 100vw; */
+  margin: 0;
+  padding: 0;
+  height: 50%;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url("/images/background.jpg");
+  /* background-repeat: no-repeat; */
+
+  background-size: cover;
+  background-position: center;
+  background-size: inherit;
+  height: 100%;
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+@media screen and (min-width: 600px) {
+  #content-wrap {
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #content-wrap {
+    padding-bottom: 20px;
+  }
+}
+/* footer {
+  position: absolute;
+  bottom: 0px;
+} */
