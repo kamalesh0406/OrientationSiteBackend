@@ -19,7 +19,7 @@ export class Events {
   event_id: number;
 
   @Column("longtext")
-  name: string;
+  title: string;
 
   @Column("boolean")
   allDay: boolean;

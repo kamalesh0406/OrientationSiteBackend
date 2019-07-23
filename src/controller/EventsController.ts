@@ -30,7 +30,7 @@ class EventsController {
 
     let eventRepository = getRepository(Events);
     let event = new Events();
-    event.name = name;
+    event.title = name;
     // event.date = time;
     event.start = new Date(start);
     event.end = new Date(end);
