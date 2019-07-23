@@ -6,3 +6,4 @@ tmp/
 temp/
 src/config/config.ts
 ormconfig.json
+yarn.lock
