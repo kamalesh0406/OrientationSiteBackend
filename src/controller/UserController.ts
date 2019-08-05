@@ -36,7 +36,7 @@ class UserController {
     let user = new User();
 
     user.roll_number = +roll_number;
-    user.name = name;
+    user.name = "random";
     user.DOB = new Date("2019-08-07");
     user.blood_group = "O+";
     user.phone_number = "9080719032";
