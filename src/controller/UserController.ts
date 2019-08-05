@@ -9,15 +9,11 @@ class UserController {
   static register = async (req: Request, res: Response) => {
     let {
       roll_number,
-      name,
-      dob,
-      blood_group,
-      phone_number,
-      department
+      password
     } = req.body;
     console.log(roll_number, name);
     if (
-      !(roll_number && name && dob && blood_group && phone_number && department)
+      !(roll_number && password)
     ) {
       res.status(400).send();
     }
@@ -41,18 +37,14 @@ class UserController {
 
     user.roll_number = +roll_number;
     user.name = name;
-    user.DOB = new Date(dob);
-    user.blood_group = blood_group;
-    user.phone_number = phone_number;
-    user.department = department;
+    user.DOB = new Date("2019-08-07");
+    user.blood_group = "O+";
+    user.phone_number = "9080719032";
+    user.department = "ICE";
     user.is_admin = false;
     user.t_shirt = null;
 
-    user.password =
-      user.blood_group[0] +
-      monthNames[user.DOB.getMonth()] +
-      dob.slice(-2) +
-      user.phone_number.slice(-3);
+    user.password = password;
     console.log(user.password);
     user.hashPassword();
 
